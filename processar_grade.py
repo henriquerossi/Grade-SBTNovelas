@@ -4,7 +4,7 @@ import os
 from datetime import datetime
 
 # URL do JSON do canal (Substitua abaixo)
-URL_JSON = "https://bridge.evrideo.tv/SBTEPG?ChannelUID=raiz&DurationHours=168"
+URL_JSON = "https://bridge.evrideo.tv/SBTEPG?ChannelUID=novelas&DurationHours=168"
 
 try:
     # 1. Criar a pasta 'historico' se ela não existir
