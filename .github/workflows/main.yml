@@ -2,8 +2,8 @@ name: Gerador de Historico de Grade
 
 on:
   schedule:
-    # Roda a cada 3 dias às 03:00 UTC (00:00 Horário de Brasília)
-    - cron: '0 3 */3 * *'
+    # Roda a cada 5 dias às 03:00 UTC (00:00 Horário de Brasília)
+    - cron: '0 3 */5 * *'
   workflow_dispatch: # Botão para rodar manualmente no site
 
 jobs:
