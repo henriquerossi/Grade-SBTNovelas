@@ -2,13 +2,12 @@ name: Atualizar Grade de TV
 
 on:
   schedule:
-    - cron: '0 3 */3 * *'  # Executa automaticamente a cada 3 dias às 03:00 UTC
-  workflow_dispatch:       # Ativa o botão para rodar manualmente no GitHub
+    - cron: '0 3 */3 * *'  # Roda a cada 3 dias (00:00 Horário de Brasília)
+  workflow_dispatch:       # Permite rodar manualmente pelo botão "Run workflow"
 
 jobs:
   build:
-    runs-runs-on: ubuntu-latest
-    
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout do código
         uses: actions/checkout@v4
@@ -29,5 +28,5 @@ jobs:
           git config --global user.name 'GradeBot'
           git config --global user.email 'bot@github.com'
           git add .
-          git commit -m "Backup diário e atualização dos catálogos por programa" || exit 0
+          git commit -m "Backup e atualização do arquivo mestre consolidado" || exit 0
           git push
