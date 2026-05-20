@@ -1,33 +1,33 @@
-name: Gerador de Historico de Grade
+name: Atualizar Grade de TV
 
 on:
   schedule:
-    # Roda a cada 5 dias às 03:00 UTC (00:00 Horário de Brasília)
-    - cron: '0 3 */5 * *'
-  workflow_dispatch: # Botão para rodar manualmente no site
+    - cron: '0 3 */3 * *'  # Executa automaticamente a cada 3 dias às 03:00 UTC
+  workflow_dispatch:       # Ativa o botão para rodar manualmente no GitHub
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-runs-on: ubuntu-latest
+    
     steps:
       - name: Checkout do código
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Configurar Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
           python-version: '3.9'
 
-      - name: Instalar Dependencias
+      - name: Instalar dependências
         run: pip install pandas requests
 
-      - name: Executar Script
-        run: python juntar_antigos.py
+      - name: Executar script de processamento
+        run: python processar_grade.py
 
-      - name: Salvar Mudancas no Github
+      - name: Salvar Mudanças no Github
         run: |
           git config --global user.name 'GradeBot'
           git config --global user.email 'bot@github.com'
           git add .
-          git commit -m "Nova grade adicionada ao historico" || exit 0
+          git commit -m "Backup diário e atualização dos catálogos por programa" || exit 0
           git push
