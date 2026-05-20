@@ -22,7 +22,7 @@ jobs:
         run: pip install pandas requests
 
       - name: Executar Script
-        run: python processar_grade.py
+        run: python juntar_antigos.py
 
       - name: Salvar Mudancas no Github
         run: |
