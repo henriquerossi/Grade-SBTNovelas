@@ -5,7 +5,7 @@ import re
 from datetime import datetime
 
 # CONFIGURAÇÃO DO CANAL (Insira a URL correspondente)
-URL_JSON = "https://bridge.evrideo.tv/SBTEPG?ChannelUID=novelas&DurationHours=168"
+URL_JSON = "https://d31l2nn7dlh4li.cloudfront.net/amg00527/epg_deliveries/amgplt0764/amg00527c9/amg00527c9.json"
 
 def padronizar_nome_arquivo(nome):
     """
